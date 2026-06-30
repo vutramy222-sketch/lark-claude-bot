@@ -1,0 +1,15 @@
+services:
+  - type: web
+      name: lark-claude-bot
+          env: python
+              buildCommand: pip install -r requirements.txt
+                  startCommand: gunicorn app:app
+                      plan: free
+                          envVars:
+                                - key: LARK_APP_ID
+                                        sync: false
+                                              - key: LARK_APP_SECRET
+                                                      sync: false
+                                                            - key: CLAUDE_API_KEY
+                                                                    sync: false
+                                                                    
